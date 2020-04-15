@@ -4,30 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 <!------------------------ simple view -------------------------------------->
 <!-- this is a simpler view for data imput and viewing  -->
-<section class="simple">
-    <article class="login">
-        
+<section id="simple">
+    <article id="login" class="page">
+        <div class="login-container">
+            <div class="logo">
+                <img src="images/arla-logo.png" alt="arla logo">
+            </div>
+            <div class="signIn">
+                <input type="text" placeholder="brugernavn">
+                <input type="password" placeholder="password">
+                <div class="login-btn">
+                 <p>login</p>
+                </div>
+            </div>
+            <div class="help">
+                <a href="#loginHelp">kan du ikke loggin?</a>    
+            </div>
+    </div>   
     </article>
-    <article class="fill">
+    <article id="fill" class="page">
 
     </article>
-    <article class="end">
+    <article id="end" class="page">
 
     </article>
-    <article class="graf-view">
+    <article id="graf-view" class="page">
 
     </article>
 </section>
 <!-- graphic view -->
 <!-- this is where you can view a more graphic of the data -->
-<section class="graphic">
+<section id="graphic" class="page">
 </section>
 <!-------------------------------- scrips ----------------------------------->
-<script src="js/main.js" ></script>    
+<script  src="js/main.js" type="module"></script>    
 </body>
 </html>

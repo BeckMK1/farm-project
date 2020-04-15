@@ -1,0 +1,62 @@
+
+:root{
+--mainColor:#4bb131 ;
+}
+*{
+margin: 0;
+padding: 0;
+}
+body{
+background: var(--mainColor);
+font-family: 'Segoe UI Regular';
+}
+@media only screen and (max-width: 812px) {
+.login-container{
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+grid-template-rows: 1fr 1fr;
+grid-template-areas: 
+". logo ."
+".  signIn ."
+". ghelp. "
+;
+}
+.logo{
+    grid-area: logo;
+    align-items: end;
+}
+.signIn{
+    grid-area: signIn;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.signIn input{
+text-align: center;
+height: 30px;
+width: auto;
+}
+.signIn input:nth-child(even){
+margin-top: 12px;
+margin-bottom: 20px;
+}
+.login-btn{
+display: flex;
+justify-content: center;
+margin-bottom: 12px;
+}
+.login-btn p{
+padding-top: 10px;
+padding-bottom: 10px;
+border-radius: 20px;
+background-color: white;
+text-align: center;    
+width: 50%;
+}
+.help{
+    grid-area: ghelp;
+    justify-self: center;
+ }
+
+}
