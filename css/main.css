@@ -1,62 +1,65 @@
+:root {
+    --mainColor: #4bb131;
+}
 
-:root{
---mainColor:#4bb131 ;
+* {
+    margin: 0;
+    padding: 0;
 }
-*{
-margin: 0;
-padding: 0;
+
+body {
+    background: var(--mainColor);
+    font-family: 'Segoe UI Regular';
 }
-body{
-background: var(--mainColor);
-font-family: 'Segoe UI Regular';
+
+.login-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        ". logo ."
+        ". signIn ."
+    ;
 }
-@media only screen and (max-width: 812px) {
-.login-container{
-display: grid;
-grid-template-columns: 1fr 1fr 1fr;
-grid-template-rows: 1fr 1fr;
-grid-template-areas: 
-". logo ."
-".  signIn ."
-". ghelp. "
-;
-}
-.logo{
+
+.logo {
     grid-area: logo;
     align-items: end;
+    margin-bottom: 50px;
 }
-.signIn{
+
+.signIn {
     grid-area: signIn;
     align-self: center;
+}
+
+.signIn input {
+position: relative;
+left:14%;
+text-align: center;
+width: 70%;
+height: 35px;
+}
+
+.signIn input:nth-child(even) {
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+.login-btn {
     display: flex;
     justify-content: center;
-    flex-direction: column;
+    margin-bottom: 12px;
 }
-.signIn input{
-text-align: center;
-height: 30px;
-width: auto;
-}
-.signIn input:nth-child(even){
-margin-top: 12px;
-margin-bottom: 20px;
-}
-.login-btn{
-display: flex;
-justify-content: center;
-margin-bottom: 12px;
-}
-.login-btn p{
-padding-top: 10px;
-padding-bottom: 10px;
-border-radius: 20px;
-background-color: white;
-text-align: center;    
-width: 50%;
+
+.login-btn p {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 20px;
+    background-color: white;
+    text-align: center;
+    width: 50%;
 }
 .help{
-    grid-area: ghelp;
-    justify-self: center;
- }
-
+text-align: center;
 }
