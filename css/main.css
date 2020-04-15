@@ -12,6 +12,7 @@ body {
     font-family: 'Segoe UI Regular';
 }
 
+/*-------------------------------------------------- login page -----------------------------------------  */
 .login-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -34,11 +35,11 @@ body {
 }
 
 .signIn input {
-position: relative;
-left:14%;
-text-align: center;
-width: 70%;
-height: 35px;
+    position: relative;
+    left: 14%;
+    text-align: center;
+    width: 70%;
+    height: 35px;
 }
 
 .signIn input:nth-child(even) {
@@ -60,6 +61,134 @@ height: 35px;
     text-align: center;
     width: 50%;
 }
-.help{
+
+.help {
+    text-align: center;
+}
+
+/*-------------------------------------------------- fill-out page  -----------------------------------------*/
+.fill-container {
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        ". feed ."
+        ". self ."
+        ". milk ."
+        ". cows ."
+        ". diesel ."
+        ". power ."
+        ". trunIn ."
+    ;
+}
+
+.feed {
+    grid-area: feed;
+}
+
+.self {
+    grid-area: self;
+}
+
+.milk {
+    grid-area: milk;
+}
+
+.cows {
+    grid-area: cows;
+}
+
+.diesel {
+    grid-area: diesel;
+}
+
+.power {
+    grid-area: power;
+}
+
+.trunIn {
+    grid-area: trunIn;
+}
+
+.fill-container {
+    color: white;
+    font-size: 20px;
+    margin-top: 50px;
+}
+
+.fill-container p {
+    margin-bottom: 10px;
+}
+
+.fill-container input {
+    height: 30px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.cows input {
+    margin-top: 28px;
+}
+.trunIn{
+justify-self: center;
+margin-top: 30px;
+}
+.trunIn p{
+color: black;
+background-color: white;
 text-align: center;
+padding-left: 40px;
+padding-right: 40px;
+border-radius: 20px;
+font-size: 25px;
+padding-bottom: 2px;
+}
+/*-------------------------------------- end ------------------------------------------------ */
+.end-container{
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+    ". thanks ."
+    ". thanksImg ."
+    ". seeMore ."
+    ". seeMore-btn ."
+    ;
+    color: white;
+}
+.thanks{
+grid-area: thanks;
+text-align: center;
+font-size: 30px;
+margin-top: 12px;
+}
+.thanksImg{
+grid-area: thanksImg;
+justify-self: center;
+align-self: center;
+}
+.seeMore{
+grid-area: seeMore;
+font-size: 25px;
+}
+.seeMore-btn{
+    grid-area: seeMore-btn;
+    justify-self: center;
+    font-size: 25px;
+    }
+    .seeMore-btn p{
+        color: black;
+        background-color: white;
+        text-align: center;
+        padding-left: 38px;
+        padding-right: 38px;
+        border-radius: 20px;
+        font-size: 25px;;
+        margin-top: 12px;
+        padding-bottom: 2px;
+    }
+.thanksImg img{
+width: 200px;
+height: 200px;
 }

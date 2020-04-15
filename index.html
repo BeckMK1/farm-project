@@ -1,46 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
-<body>
-<!------------------------ simple view -------------------------------------->
-<!-- this is a simpler view for data imput and viewing  -->
-<section id="simple">
-    <article id="login" class="page">
-        <div class="login-container">
-            <div class="logo">
-                <img src="images/arla-logo.png" alt="arla logo">
-            </div>
-            <div class="signIn">
-                <input type="text" placeholder="brugernavn">
-                <input type="password" placeholder="password">
-                <div class="login-btn">
-                 <p>login</p>
+
+<body onhashchange="pageChange()">
+    <!------------------------ simple view -------------------------------------->
+    <!-- this is a simpler view for data imput and viewing  -->
+    <section id="simple">
+        <article id="login" class="page">
+            <div class="login-container">
+                <div class="logo">
+                    <img src="images/arla-logo.png" alt="arla logo">
                 </div>
-                <div class="help">
-                    <a href="#loginHelp">kan du ikke loggin?</a>    
+                <div class="signIn">
+                    <input type="text" placeholder="brugernavn">
+                    <input type="password" placeholder="password">
+                    <div class="login-btn">
+                        <p>login</p>
+                    </div>
+                    <div class="help">
+                        <a href="#loginHelp">kan du ikke loggin?</a>
+                    </div>
+                </div>
+        </article>
+        <article id="fill" class="page">
+            <div class="fill-container">
+                <div class="feed">
+                    <p>hvor meget foder har du brug i år?
+                        ( i kg )</p>
+                    <input type="text" placeholder="indtast data her">
+                </div>
+                <div class="self">
+                    <p>hvor meget af foderet har du selv
+                        produceret i år? (i kg)</p>
+                    <input type="text" placeholder="indtast data her">
+                </div>
+                <div class="milk">
+                    <p>hvor meget mælk har du
+                        produceret i år? ( i kg)</p>
+                    <input type="text" placeholder="indtast data her">
+                </div>
+                <div class="cows">
+                    <p>hvor mange køer har du ?</p>
+                    <input type="text" placeholder="indtast data her">
+                </div>
+                <div class="diesel">
+                    <p>hvor diesel har du brugt i år?
+                        <br> (i liter) </p>
+                    <input type="text" placeholder="indtast data her">
+                </div>
+                <div class="power">
+                    <p>hvor meget strøm har du brugt
+                        i år? ( i kWh)</p>
+                    <input type="text" placeholder="indtast data her">
+                </div>
+                <div class="trunIn">
+                    <p>afslut</p>
+                </div>
             </div>
-    </div>   
-    </article>
-    <article id="fill" class="page">
+        </article>
+        <article id="end" class="page">
+            <div class="end-container">
+                <div class="thanks">
+                    <p>Tak <br> for at hjælpe Arla med at nå vores målom at nedskære Co2. <br><br> Du gøre verden til et
+                        rener sted </p>
+                </div>
+                <div class="thanksImg">
+                    <img src="images/cow.png" alt="cow">
+                </div>
+                <div class="seeMore">
+                    <p>se hvordan du har gjort i forhold til sidste år </p>
+                    </div>
+                    <div class="seeMore-btn">
+                        <p>se her</p>
+                </div>
+            </div>
+        </article>
+        <article id="graf-view" class="page">
 
-    </article>
-    <article id="end" class="page">
-
-    </article>
-    <article id="graf-view" class="page">
-
-    </article>
-</section>
-<!-- graphic view -->
-<!-- this is where you can view a more graphic of the data -->
-<section id="graphic" class="page">
-</section>
-<!-------------------------------- scrips ----------------------------------->
-<script  src="js/main.js" type="module"></script>    
+        </article>
+    </section>
+    <!-- graphic view -->
+    <!-- this is where you can view a more graphic of the data -->
+    <section id="graphic" class="page">
+    </section>
+    <!-------------------------------- scrips ----------------------------------->
+    <script src="js/main.js" type="module"></script>
 </body>
+
 </html>
