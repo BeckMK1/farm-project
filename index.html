@@ -18,8 +18,8 @@
                     <img src="images/arla-logo.png" alt="arla logo">
                 </div>
                 <div class="signIn">
-                    <input type="text" placeholder="brugernavn">
-                    <input type="password" placeholder="password">
+                    <input id="loginEmail" type="text" placeholder="brugernavn">
+                    <input id="loginPassword" type="password" placeholder="password">
                     <div class="login-btn">
                         <p>login</p>
                     </div>
@@ -62,6 +62,7 @@
                 <div class="trunIn">
                     <p>afslut</p>
                 </div>
+                <div class="logout"><p>logout</p></div>
             </div>
         </article>
         <article id="end" class="page">
@@ -82,15 +83,38 @@
             </div>
         </article>
         <article id="graf-view" class="page">
-
+            <div class="graf-container">
+                <div class="co2-diesel">
+                    <p> diesel: kg co2 pr. kg mælk</p>
+                    <div class="graf"></div>
+                </div>
+                <div class="co2-power">
+                    <p>strøm: kg co2 pr. kg mælk</p>
+                    <div class="graf"></div>
+                </div>
+                <div class="methane-cows"> 
+                    <p>køer: kg methan pr. kg mælk</p>
+                    <div class="graf"></div>
+                </div>
+                <div class="co2-feed">
+                    <p>føder: kg co2 pr. kg mælk</p>
+                    <div class="graf"></div>
+                </div>
+        </div>
         </article>
     </section>
     <!-- graphic view -->
     <!-- this is where you can view a more graphic of the data -->
     <section id="graphic" class="page">
     </section>
-    <!-------------------------------- scrips ----------------------------------->
+    <!----------------------------------------------------------------- scrips ------------------------------------------------------->
+    <!------------------------- firebase scrips --------------------------------->
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-firestore.js"></script>
+    <!------------------- my scrips ------------------------------------------------>
     <script src="js/main.js" type="module"></script>
+    <script src="js/firebase.js"></script>
 </body>
 
 </html>

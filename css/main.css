@@ -70,7 +70,7 @@ body {
 .fill-container {
     display: grid;
     grid-template-columns: 50px 1fr 50px;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas:
         ". feed ."
         ". self ."
@@ -79,6 +79,7 @@ body {
         ". diesel ."
         ". power ."
         ". trunIn ."
+        ". logout ."
     ;
 }
 
@@ -109,7 +110,12 @@ body {
 .trunIn {
     grid-area: trunIn;
 }
-
+.logout{
+ grid-area:  logout;
+ justify-self: center;
+ background-color: white;
+ color: black;
+}
 .fill-container {
     color: white;
     font-size: 20px;
@@ -191,4 +197,41 @@ font-size: 25px;
 .thanksImg img{
 width: 200px;
 height: 200px;
+}
+/*---------------------------------------------------- graf --------------------------------------*/
+.graf-container{
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+    ". co2-diesel ."
+    ". co2-power ."
+    ". methane-cows ."
+    ". co2-feed ."
+    ;
+    color: white;
+    font-size: 20px;
+}
+.co2-diesel{
+grid-area: co2-diesel;
+margin-top: 12px;
+}
+.co2-power{
+grid-area: co2-power;
+}
+.methane-cows{
+grid-area: methane-cows;
+}
+.co2-feed{
+grid-area: co2-feed;
+margin-bottom: 30px;
+}
+.graf-container p{
+margin-bottom: 12px;
+margin-top: 12px;
+}
+.graf{
+width: 300px;
+height: 300px;
+background-color: white;
 }
