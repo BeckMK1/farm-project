@@ -202,12 +202,13 @@ height: 200px;
 .graf-container{
     display: grid;
     grid-template-columns: 50px 1fr 50px;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-areas:
     ". co2-diesel ."
     ". co2-power ."
     ". methane-cows ."
     ". co2-feed ."
+    ". score ."
     ;
     color: white;
     font-size: 20px;
@@ -225,6 +226,9 @@ grid-area: methane-cows;
 .co2-feed{
 grid-area: co2-feed;
 margin-bottom: 30px;
+}
+.score-btn{
+grid-area: score;
 }
 .graf-container p{
 margin-bottom: 12px;
