@@ -60,7 +60,7 @@ function signOut() {
   firebase.auth().signOut()
 }
 //--------------------- reading user data from firebase ---------------------------- 
-
+//--------------------- reading data for leaderbord ---------------------------------
 db.collection("users").get().then((querySnapshot) => {
   let users = [];
   querySnapshot.forEach((doc) => {
@@ -77,19 +77,25 @@ db.collection("users").get().then((querySnapshot) => {
 });
 // append users to the DOM
 function appendUsers(users) {
+  let scores = []; 
   let htmlTemplate = "";
   for (let user of users) {
+    let score = user.score;
+    scores.push(score);
+    scores.sort();
+    console.log(scores)
     console.log(user.id)
     console.log(user.name)
     htmlTemplate += `
-  <article>
-  <h2>${user.name}</h2>
+  <article class="bord-container" id="${user.score}">
+  <p class="bord-name">${user.name}</p>
+  <p class="bord-score">${user.score}</p>
   </article>
   `;
   }
+
   document.querySelector(".leaderbord-container").innerHTML = htmlTemplate;
 };
-
 // append users date to graf in DOM
 function readDataDiesel(users) {
   for (let user of users) {
