@@ -19,8 +19,9 @@ document.querySelector(".score-btn").addEventListener("click", navToScore)
 //--------------- for sign in and out --------------------------------------
 document.querySelector(".logout").addEventListener("click", signOut)
 document.querySelector(".login-btn").addEventListener("click", login)
-
-
+//----------------- adding data -------------------------------------------
+document.querySelector(".trunIn").addEventListener("click", addData)
+ 
 //----------------------- nav functions -------------------------------------
 // "afslut" button
 function navToEnd() {
@@ -130,7 +131,7 @@ function readDataDiesel(users) {
   }
 }
 
-function readDataPower(users){
+function readDataPower(users) {
   for (let user of users) {
     db.collection("users").doc(user.id).collection("power").get()
       .then(querySnapshot => {
@@ -144,6 +145,7 @@ function readDataPower(users){
         powerData(powers)
       });
   }
+
   function powerData(powers) {
     let powerChart = document.getElementById("power-graf").getContext('2d')
     for (let power of powers) {
@@ -169,7 +171,7 @@ function readDataPower(users){
   }
 }
 
-function readDataCows(users){
+function readDataCows(users) {
   for (let user of users) {
     db.collection("users").doc(user.id).collection("power").get()
       .then(querySnapshot => {
@@ -183,6 +185,7 @@ function readDataCows(users){
         cowData(cows)
       });
   }
+
   function cowData(cows) {
     let cowChart = document.getElementById("cow-graf").getContext('2d')
     for (let cow of cows) {
@@ -208,7 +211,7 @@ function readDataCows(users){
   }
 }
 
-function readDatafeed(users){
+function readDatafeed(users) {
   for (let user of users) {
     db.collection("users").doc(user.id).collection("power").get()
       .then(querySnapshot => {
@@ -222,6 +225,7 @@ function readDatafeed(users){
         feedData(feeds)
       });
   }
+
   function feedData(feeds) {
     let feedChart = document.getElementById("feed-graf").getContext('2d')
     for (let feed of feeds) {
@@ -245,4 +249,26 @@ function readDatafeed(users){
 
     }
   }
+}
+  //----------------------------------------------------- input data in to firebase ----------------------------------------------
+
+function addData(){
+  db.collection("users").get().then((querySnapshot) => {
+    let users = [];
+    querySnapshot.forEach((doc) => {
+      let user = doc.data();
+      console.log(user);
+      user.id = doc.id;
+      users.push(user);
+    });
+  for(let user of users){
+  db.collection("users").doc(user.id).collection("raw-data").doc("data").set({
+  feed:document.querySelector("#feed-raw").value,
+  milk:document.querySelector("#milk-raw").value,
+  cows:document.querySelector("#cows-raw").value,
+  diesel:document.querySelector("#diesel-raw").value,
+  power:document.querySelector("#power-raw").value
+  });
+  };
+});
 }
