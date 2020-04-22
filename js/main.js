@@ -75,27 +75,30 @@ db.collection("users").get().then((querySnapshot) => {
   readDataCows(users);
   readDatafeed(users)
 });
-// append users to the DOM
+//leaderboard
 function appendUsers(users) {
-  let scores = []; 
-  let htmlTemplate = "";
-  for (let user of users) {
-    let score = user.score;
-    scores.push(score);
-    scores.sort();
-    console.log(scores)
-    console.log(user.id)
-    console.log(user.name)
-    htmlTemplate += `
-  <article class="bord-container" id="${user.score}">
-  <p class="bord-name">${user.name}</p>
-  <p class="bord-score">${user.score}</p>
-  </article>
-  `;
-  }
+  let leaderboard = document.querySelector(".leaderboard-container");
+  leaderboard.innerHTML="";
+  users.sort();
+  users.reverse();
+let elements = [];
+for(let user of users) {
+ let name = document.createElement("div");
+ let score = document.createElement("div");
+ name.classList.add("name");
+ score.classList.add("score");
+ name.innerHTML = user.name;
+ score.innerHTML = user.score;
 
-  document.querySelector(".leaderbord-container").innerHTML = htmlTemplate;
-};
+ let scoreRow = document.createElement("div");
+ scoreRow.classList.add("row");
+ scoreRow.appendChild(name);
+ scoreRow.appendChild(score);
+ leaderboard.appendChild(scoreRow);
+
+ elements.push(scoreRow);
+}
+}
 // append users date to graf in DOM
 function readDataDiesel(users) {
   for (let user of users) {

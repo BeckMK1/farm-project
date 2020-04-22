@@ -240,16 +240,16 @@ height: 300px;
 background-color: white;
 }
 /* -------------------------------------- leaderbord --------------------------------------- */
-.bord-container{
+.row{
     display: grid;
     grid-template-columns: 50px 50px 1fr 50px 50px;
     grid-template-areas:
     ". bord-name .  bord-score." 
     ;
 }
-.bord-name{
+.name{
     grid-area: bord-name;
 }
-.bord-score{
+.score{
     grid-area: bord-score;
 }
