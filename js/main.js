@@ -5,7 +5,7 @@ import {
 } from "./firebase.js";
 
 
-let spa = new Spa("login");
+let spa = new Spa("graphic");
 
 window.pageChange = function () {
   spa.pageChange();
@@ -37,24 +37,24 @@ function navToScore() {
 }
 //----------------------------- firebase login ------------------
 // login button
-function login() {
-  let email = document.querySelector("#loginEmail").value;
-  let password = document.querySelector("#loginPassword").value;
-  firebase.auth().signInWithEmailAndPassword(email, password);
-}
+// function login() {
+//   let email = document.querySelector("#loginEmail").value;
+//   let password = document.querySelector("#loginPassword").value;
+//   firebase.auth().signInWithEmailAndPassword(email, password);
+// }
 
-// checking if signIn or not
-firebase.auth().onAuthStateChanged(function (user) {
-  if (user) {
-    // User is signed in.
-    // navs to fill page
-    spa.navigateTo("fill")
-  } else {
-    // User is signed out.
-    // navs back to login
-    spa.navigateTo("login")
-  }
-});
+// // checking if signIn or not
+// firebase.auth().onAuthStateChanged(function (user) {
+//   if (user) {
+//     // User is signed in.
+//     // navs to fill page
+//     spa.navigateTo("fill")
+//   } else {
+//     // User is signed out.
+//     // navs back to login
+//     spa.navigateTo("graphic")
+//   }
+// });
 // sign out button 
 function signOut() {
   firebase.auth().signOut()
