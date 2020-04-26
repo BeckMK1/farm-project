@@ -81,7 +81,6 @@ function appendUsers(users) {
   leaderboard.innerHTML="";
   users.sort();
   users.reverse();
-let elements = [];
 for(let user of users) {
  let name = document.createElement("div");
  let score = document.createElement("div");
@@ -95,8 +94,6 @@ for(let user of users) {
  scoreRow.appendChild(name);
  scoreRow.appendChild(score);
  leaderboard.appendChild(scoreRow);
-
- elements.push(scoreRow);
 }
 }
 // append users date to graf in DOM
