@@ -5,7 +5,7 @@ import {
 } from "./firebase.js";
 
 
-let spa = new Spa("login");
+let spa = new Spa("#graphic");
 
 window.pageChange = function () {
   spa.pageChange();
@@ -21,13 +21,13 @@ document.querySelector(".logout").addEventListener("click", signOut)
 document.querySelector(".login-btn").addEventListener("click", login)
 //----------------- adding data -------------------------------------------
 document.querySelector(".trunIn").addEventListener("click", addData)
- 
+
 //----------------------- nav functions -------------------------------------
 // "afslut" button
 function navToEnd() {
   spa.navigateTo("end")
 }
-// "ser mere" button 
+// "ser mere" button
 function navToGraf() {
   spa.navigateTo("graf-view")
 }
@@ -55,11 +55,11 @@ firebase.auth().onAuthStateChanged(function (user) {
     spa.navigateTo("login")
   }
 });
-// sign out button 
+// sign out button
 function signOut() {
   firebase.auth().signOut()
 }
-//--------------------- reading user data from firebase ---------------------------- 
+//--------------------- reading user data from firebase ----------------------------
 //--------------------- reading data for leaderbord ---------------------------------
 db.collection("users").get().then((querySnapshot) => {
   let users = [];

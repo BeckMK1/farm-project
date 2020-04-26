@@ -244,7 +244,7 @@ background-color: white;
     display: grid;
     grid-template-columns: 50px 50px 1fr 50px 50px;
     grid-template-areas:
-    ". bord-name .  bord-score." 
+    ". bord-name .  bord-score."
     ;
 }
 .name{
@@ -252,4 +252,18 @@ background-color: white;
 }
 .score{
     grid-area: bord-score;
+}
+
+/* -------------------------------------- Graphic --------------------------------------- */
+
+#graphic img {
+height: 500px;
+weight: 500px;
+}
+
+#farmmap {
+  height: 500px;
+  weight: 500px;
+  }
+
 }
