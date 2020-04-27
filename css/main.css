@@ -6,10 +6,13 @@
     margin: 0;
     padding: 0;
 }
-
+@font-face {
+    font-family: Arla InterFace W;
+    src: url(../fonts/ArlaIF_Rg.ttf) format("embedded-opentype");
+    }
 body {
     background: var(--mainColor);
-    font-family: 'Segoe UI Regular';
+    font-family: Arla InterFace W, Georgia;
 }
 
 /*-------------------------------------------------- login page -----------------------------------------  */
@@ -270,12 +273,13 @@ background-color: white;
 }
 .leaderboard-title p{
 text-align: center;
-
 }
 .big{
 font-size: 25px;
 background-color: white;
 border-radius: 8px;
+margin-bottom: 12px;
+padding-top: 7px;
 }
 .white-background{
 position: absolute;
