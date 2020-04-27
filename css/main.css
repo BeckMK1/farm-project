@@ -286,6 +286,7 @@ background-color: white;
 }
 
 .arla-logo {
+  opacity: 0.7;
   height:100px;
   position: absolute;
   bottom:0;
