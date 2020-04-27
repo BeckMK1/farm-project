@@ -285,44 +285,53 @@ background-color: white;
 }
 /* -------------------------------------- Graphic --------------------------------------- */
 
-#heroimage-container {
-  background-image: url("../images/gaard.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  /*sizing*/
-  height: 1500px;
-  width: 2000px;
-  /*placing*/
-  margin-left:100px;
+
+#graphic body {
+  background-color: white;
+
 }
 
+
+/* Hero image */
+#heroimage-container {
+  background-image: url("../images/gaard.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /*sizing*/
+  height: 900px;
+  width: 1000px;
+  /*placing*/
+}
+
+/* Bottom white space */
 .whitespace {
   background: rgb(255,255,255);
   background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 68%);
   /*sizing*/
-  height:150px;
-  width:2000px;
+  height:100px;
+  width:1000px;
   /*placing*/
   z-index:2;
-  position: absolute;
-  border-bottom:500px;
-  margin-top:1400px;
+  position: relative;
+
 }
 
 .logo-box{
   position: relative;
+  bottom:0;
 }
 
 .arla-logo {
   opacity: 0.7;
-  height:100px;
+  height:60px;
   position: absolute;
   bottom:0;
   right:0;
   margin-right:20px;
 }
 /* desktop */
+
 @media (min-width: 1025px){
 #fill{
 margin-left: 20%;
@@ -334,7 +343,7 @@ text-align: center;
 .fill-container input {
 position: relative;
 width: 50%;
-left: 25%;  
+left: 25%;
 }
 .end-container{
 text-align: center;
@@ -350,7 +359,7 @@ text-align: center;
     ". co2-feed ."
     ". score ."
     ;
-}   
+}
 .graf{
     width: 900px;
     height: 450px;

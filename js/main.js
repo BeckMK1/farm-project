@@ -5,7 +5,7 @@ import {
 } from "./firebase.js";
 
 
-let spa = new Spa("graphic");
+let spa = new Spa("leaderboard");
 
 window.pageChange = function () {
   spa.pageChange();
@@ -55,7 +55,7 @@ function navToScore() {
 //     spa.navigateTo("graphic")
 //   }
 // });
-// sign out button 
+// sign out button
 function signOut() {
   firebase.auth().signOut()
 }
@@ -79,10 +79,8 @@ db.collection("users").get().then((querySnapshot) => {
 function appendUsers(users) {
   let leaderboard = document.querySelector(".leaderboard-container");
   leaderboard.innerHTML="";
-  users.sort(function(a,b){
-  return Number(b.score) - Number(a.score);
-  });
-  // users.reverse();
+  users.sort();
+  users.reverse();
 for(let user of users) {
  let name = document.createElement("div");
  let score = document.createElement("div");
@@ -258,6 +256,10 @@ function readDatafeed(users) {
     }
   }
 }
+
+
+
+
   //----------------------------------------------------- input data in to firebase ----------------------------------------------
 
 function addData(){
