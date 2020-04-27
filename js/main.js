@@ -79,8 +79,10 @@ db.collection("users").get().then((querySnapshot) => {
 function appendUsers(users) {
   let leaderboard = document.querySelector(".leaderboard-container");
   leaderboard.innerHTML="";
-  users.sort();
-  users.reverse();
+  users.sort(function(a,b){
+  return Number(b.score) - Number(a.score);
+  });
+  // users.reverse();
 for(let user of users) {
  let name = document.createElement("div");
  let score = document.createElement("div");
