@@ -24,6 +24,7 @@ body {
 }
 
 .logo {
+    justify-self: center;
     grid-area: logo;
     align-items: end;
     margin-bottom: 50px;
@@ -229,6 +230,13 @@ margin-bottom: 30px;
 }
 .score-btn{
 grid-area: score;
+background-color: white;
+border-radius: 28px;
+color: black;
+width: 50%;
+justify-self: center;
+margin-bottom: 20px;
+text-align: center;
 }
 .graf-container p{
 margin-bottom: 12px;
@@ -244,8 +252,15 @@ background-color: white;
     display: grid;
     grid-template-columns: 50px 50px 1fr 50px 50px;
     grid-template-areas:
-    ". bord-name .  bord-score."
+    ". bord-name .  bord-score ."
     ;
+    background-color: white;
+    border-radius: 14px;
+    margin-top: 12px;
+    margin-left: 12px;
+    margin-right: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 .name{
     grid-area: bord-name;
@@ -253,7 +268,21 @@ background-color: white;
 .score{
     grid-area: bord-score;
 }
+.leaderboard-title p{
+text-align: center;
 
+}
+.big{
+font-size: 25px;
+background-color: white;
+border-radius: 8px;
+}
+.white-background{
+position: absolute;
+width: 100%;
+height: 5px;
+background-color: white;
+}
 /* -------------------------------------- Graphic --------------------------------------- */
 
 #heroimage-container {
@@ -291,4 +320,59 @@ background-color: white;
   bottom:0;
   right:0;
   margin-right:20px;
+}
+/* desktop */
+@media (min-width: 1025px){
+#fill{
+margin-left: 20%;
+margin-right: 20%;
+}
+#fill p{
+text-align: center;
+}
+.fill-container input {
+position: relative;
+width: 50%;
+left: 25%;  
+}
+.end-container{
+text-align: center;
+}
+.graf-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    ". co2-diesel ."
+    ". co2-power ."
+    ". methane-cows ."
+    ". co2-feed ."
+    ". score ."
+    ;
+}   
+.graf{
+    width: 900px;
+    height: 450px;
+    background-color: white;
+}
+.graf-container p{
+text-align: center;
+}
+.score-btn{
+    width: 20%;
+    }
+    .row{
+        display: grid;
+        grid-template-columns: 50px 50px 1fr 50px 50px;
+        grid-template-areas:
+        ". bord-name .  bord-score ."
+        ;
+        background-color: white;
+        border-radius: 14px;
+        margin-top: 12px;
+        margin-left: 35%;
+        margin-right: 35%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
 }
