@@ -10,7 +10,6 @@ let spa = new Spa("login");
 window.pageChange = function () {
   spa.pageChange();
 }
-
 //-------------- event listeners ---------------------------------------------
 //------------------------- for nav ---------------------------------
 document.querySelector(".trunIn").addEventListener("click", navToEnd)
@@ -48,6 +47,7 @@ firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
     // User is signed in.
     // navs to fill page
+    // console.log(user.uid)
     spa.navigateTo("fill")
   } else {
     // User is signed out.
@@ -55,6 +55,7 @@ firebase.auth().onAuthStateChanged(function (user) {
     spa.navigateTo("login")
   }
 });
+
 // sign out button
 function signOut() {
   firebase.auth().signOut()
@@ -66,7 +67,7 @@ db.collection("users").get().then((querySnapshot) => {
   querySnapshot.forEach((doc) => {
     let user = doc.data();
     console.log(user);
-    user.id = doc.id;
+    user.uid = doc.id;
     users.push(user);
   });
   appendUsers(users);
@@ -97,24 +98,26 @@ for(let user of users) {
 }
 }
 // append users date to graf in DOM
-function readDataDiesel(users) {
-  for (let user of users) {
-    db.collection("users").doc(user.id).collection("diesel").get()
+function readDataDiesel() {
+  let currentUser = firebase.auth().currentUser
+    db.collection("users").doc(currentUser.uid).collection("diesel").get()
       .then(querySnapshot => {
         let diesels = [];
+        diesels =[];
         querySnapshot.forEach(doc => {
           let diesel = doc.data()
-          console.log(doc.id, " => ", doc.data());
+          // console.log(doc.id, " => ", doc.data());
           diesel.id = doc.id
           diesels.push(diesel);
+           console.log(diesel.id, " => ", doc.data())
+          console.log(currentUser.uid)
         });
         dieselData(diesels)
       });
-  }
 
   function dieselData(diesels) {
     let dieselChart = document.getElementById("diesel-graf").getContext('2d')
-    for (let diesel of diesels) {
+    for (let diesel of diesels){
 
       let dieselCo2Chart = new Chart(dieselChart, {
         type: 'bar',
@@ -137,20 +140,21 @@ function readDataDiesel(users) {
   }
 }
 
-function readDataPower(users) {
-  for (let user of users) {
-    db.collection("users").doc(user.id).collection("power").get()
+
+function readDataPower() {
+  let currentUser = firebase.auth().currentUser
+    db.collection("users").doc(currentUser.uid).collection("power").get()
       .then(querySnapshot => {
         let powers = [];
         querySnapshot.forEach(doc => {
           let power = doc.data()
-          console.log(doc.id, " => ", doc.data());
+          // console.log(doc.id, " => ", doc.data());
           power.id = doc.id
           powers.push(power);
         });
         powerData(powers)
       });
-  }
+
 
   function powerData(powers) {
     let powerChart = document.getElementById("power-graf").getContext('2d')
@@ -177,20 +181,20 @@ function readDataPower(users) {
   }
 }
 
-function readDataCows(users) {
-  for (let user of users) {
-    db.collection("users").doc(user.id).collection("power").get()
+function readDataCows() {
+  let currentUser = firebase.auth().currentUser
+    db.collection("users").doc(currentUser.uid).collection("power").get()
       .then(querySnapshot => {
         let cows = [];
         querySnapshot.forEach(doc => {
           let cow = doc.data()
-          console.log(doc.id, " => ", doc.data());
+          // console.log(doc.id, " => ", doc.data());
           cow.id = doc.id
           cows.push(cow);
         });
         cowData(cows)
       });
-  }
+
 
   function cowData(cows) {
     let cowChart = document.getElementById("cow-graf").getContext('2d')
@@ -217,20 +221,19 @@ function readDataCows(users) {
   }
 }
 
-function readDatafeed(users) {
-  for (let user of users) {
-    db.collection("users").doc(user.id).collection("power").get()
+function readDatafeed() {
+  let currentUser = firebase.auth().currentUser
+    db.collection("users").doc(currentUser.uid).collection("power").get()
       .then(querySnapshot => {
         let feeds = [];
         querySnapshot.forEach(doc => {
           let feed = doc.data()
-          console.log(doc.id, " => ", doc.data());
+          // console.log(doc.id, " => ", doc.data());
           feed.id = doc.id
           feeds.push(feed);
         });
         feedData(feeds)
       });
-  }
 
   function feedData(feeds) {
     let feedChart = document.getElementById("feed-graf").getContext('2d')
